@@ -1,0 +1,27 @@
+由于网上关于微软相关sdk介绍的项目较少，在经历了查找，实验，再查找，再实验之后，对官方文档和代码进行了一系列整合，实现了通过语音输入，经过QnAMaker库的处理，再进行语音输出的过程实现过程于原工程内 参考资料：https://github.com/ActiveNick/Unity-MS-SpeechSDK https://github.com/mamarche/UnitySpeechManager https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/tutorials/create-publish-answer
+
+此处注意，这里添加的各种key和endpoin 都是我自己注册的账号进行的试用，如果需要进行测试或者商务试用，请自行注册，这里不进行key的提供 key的创建 访问地址https://portal.azure.com/#blade/HubsExtension/BrowseAllResourcesBlade/resourceType/Microsoft.Resources%2Fresources以创建项目和相应的key 因为自己很懒 所以没有对脚本进行整理，结构写的稀碎。这里对参数进行相应的解释 SpeechServiceAPIKey：语音服务的APIKey
+
+UseClientSideSilenceDetection：Whether or not the Speech Manager should trigger the end of dictation through the use of silence detection, which is confirgurable via the the Silence Treshold and Silence Timeout settings below. Service-side silence detection is enabled by default
+
+SilenceThreshold：判断静音的波峰
+
+SilenceTimeout：判断静音的退出时间
+
+tokenUrl：文字转语音的对接地址
+
+subscriptionKey：文字转语音的pointKey
+
+voiceName：文字转语音的语言选择
+
+ttsUrl：文字转语音的接入地址
+
+ttsLanguage：语言
+
+audioFormat：音频码格式
+
+大多数代码我是直接摘取的（因为懒）所以有什么问题可以查看上面几个连接
+
+本项目使用于Unity2018.4.1f1 建议使用2018以上版本 2017.3会出现一些问题
+
+LUIS相关尚未集成在本项目中，该项目会不定期更新
